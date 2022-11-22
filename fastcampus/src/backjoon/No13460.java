@@ -28,8 +28,6 @@ public class No13460 {
 				mat[i][j] = line.charAt(j);
 			}
 		}
-		
-		
 		br.close();
 	}
 }

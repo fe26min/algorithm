@@ -1,4 +1,4 @@
-package backjoon.fastcampus.ch02.완탐_응용;
+package backjoon.fastcampus.ch02.ES_pra;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
 
 public class No1182 {
 	
-	// 모든 경우를 탐색하기
 	
 	static int N, S, count;
 	static int arr[];

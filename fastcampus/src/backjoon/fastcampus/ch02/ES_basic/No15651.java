@@ -1,4 +1,4 @@
-package backjoon.fastcampus.ch02.완탐_기본;
+package backjoon.fastcampus.ch02.ES_basic;
 
 import java.io.BufferedReader;
 import java.io.IOException;

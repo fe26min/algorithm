@@ -1,4 +1,4 @@
-package backjoon.fastcampus.ch02.완탐_응용;
+package backjoon.fastcampus.ch02.ES_pra;
 
 import java.util.Scanner;
 

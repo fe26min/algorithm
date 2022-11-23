@@ -1,4 +1,4 @@
-package backjoon.fastcampus.ch02.완탐_응용;
+package backjoon.fastcampus.ch02.ES_pra;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,23 +7,20 @@ import java.util.StringTokenizer;
 
 public class no14888 {
 	
-	// 조합 순열
-	// 조합 순열에 따라 최댓값, 최솟값 계산하기
 	static int min = Integer.MAX_VALUE
 			 , max = Integer.MIN_VALUE;
 	
 	static int N;
 	static int nums[];
-	// 부호들의 최대 갯수
 	static int arr[] = new int[4];
 	static int used[] = new int[4];
 	
 	static int cmd[];
 	
 	public static void main(String[] args) throws IOException {
-		// 입력
+		// ?��?��
 		input();
-		// 순열 조합
+		// ?��?�� 조합
 		dfs(0);
 		System.out.println(max);
 		System.out.println(min);
@@ -48,9 +45,9 @@ public class no14888 {
 	}
 
 	private static void dfs(int depth) {
-		// 부호의 갯수는 N보다 1개가 적다
+		// �??��?�� �??��?�� N보다 1개�? ?��?��
 		if(depth == N-1) {
-			// 계산하기
+			// 계산?���?
 			check();
 			return;
 		}

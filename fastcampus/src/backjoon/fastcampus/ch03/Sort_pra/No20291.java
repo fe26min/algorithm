@@ -1,4 +1,4 @@
-package backjoon.sorting.ch03.Sort_pra;
+package backjoon.fastcampus.ch03.Sort_pra;
 
 import java.io.BufferedReader;
 import java.io.IOException;

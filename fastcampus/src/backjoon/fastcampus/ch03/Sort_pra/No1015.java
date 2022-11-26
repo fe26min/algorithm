@@ -1,4 +1,4 @@
-package backjoon.sorting.ch03.Sort_pra;
+package backjoon.fastcampus.ch03.Sort_pra;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class No1015 {
-	// 정렬 기준을 배열로 줌
+	// �젙�젹 湲곗��쓣 諛곗뿴濡� 以�
 	
 	static int N;
 	static Point1015[] arr;

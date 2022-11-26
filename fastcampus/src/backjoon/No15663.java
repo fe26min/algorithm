@@ -3,7 +3,6 @@ package backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.InaccessibleObjectException;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.StringTokenizer;

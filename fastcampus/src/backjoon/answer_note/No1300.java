@@ -1,34 +1,36 @@
-package backjoon.fastcampus.ch04.BS_pra;
+package backjoon.answer_note;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//https://www.acmicpc.net/problem/1300
 public class No1300 {
-	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		int K = Integer.parseInt(br.readLine());
-		long l = 1;
-		long r = K;
+		br.close();
 		
-		while(l < r) {
-			long mid = (l + r)/2;
-			long count = 0;
+		int l = 1;
+		int r = K;
+		
+		while(l<r) {
+			int mid = (l + r)/2;
+			
+			int count = 0;
 			
 			for(int i=1; i<=N; i++) {
 				count += Math.min(mid/i, N);
 			}
-
-			if(K <= count) {
-				r = mid;
+			
+			if(count < K) {
+				l = mid+1;
 			}
 			else {
-				l = mid +1;
+				r = mid;
 			}
 		}
 		System.out.println(l);
-		br.close();
 	}
 }

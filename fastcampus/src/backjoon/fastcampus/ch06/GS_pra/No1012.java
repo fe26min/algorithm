@@ -1,4 +1,4 @@
-package backjoon.fastcampus.ch06.GS_basic;
+package backjoon.fastcampus.ch06.GS_pra;
 
 import java.io.BufferedReader;
 import java.io.IOException;

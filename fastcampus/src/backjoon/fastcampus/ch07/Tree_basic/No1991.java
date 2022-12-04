@@ -73,7 +73,6 @@ public class No1991 {
 				tree[r].parent = tree[p];
 			}
 		}
-		
 		br.close();
 	}
 }

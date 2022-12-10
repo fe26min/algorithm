@@ -27,11 +27,11 @@ public class No9470 {
 			ArrayList<ArrayList<Integer>> list = new ArrayList<>();
 			
 			for(int i=0; i<=M; i++) {
-				nodeArr[i] = new Node9470(i, 0, 0);
+				nodeArr[i] = new Node9470(0, 0);
 				list.add(new ArrayList<Integer>());
 			}
 			
- 			for(int i=0; i<P; i++) {
+			for(int i=0; i<P; i++) {
 				st = new StringTokenizer(br.readLine());
 				int A = Integer.parseInt(st.nextToken());
 				int B = Integer.parseInt(st.nextToken());
@@ -39,41 +39,42 @@ public class No9470 {
 				list.get(A).add(B);
 				inCnt[B]++;
 			}
- 			
- 			Queue<int[]> queue = new LinkedList<int[]>();
- 			
- 			for(int i=1; i<=M; i++) {
- 				if(inCnt[i]==0)
- 					queue.add(new int[] {i, 1});
- 			}
- 			while(!queue.isEmpty()) {
- 				int[] cur = queue.poll();
- 				
- 				if(cur[0]==M) break;
- 				for(int next : list.get(cur[0])) {
- 					if(nodeArr[next].max < cur[1]) {
- 						nodeArr[next].max = cur[1];
- 						nodeArr[next].cnt = 1;
- 					} else if(nodeArr[next].max == cur[1])
- 						nodeArr[next].cnt++;
- 					if(--inCnt[next]==0) {
- 						if(nodeArr[next].cnt > 1) nodeArr[next].max++;
- 						queue.add(new int[] {next, nodeArr[next].max});
- 					}
- 				}
- 			}
- 			sb.append(ti + " " + nodeArr[M].max + "\n");
-		}	
+			
+			Queue<int []> queue = new LinkedList<>();
+			
+			for(int i=1; i<=M; i++) {
+				if(inCnt[i]==0)
+					queue.add(new int[] {i, 1});
+			}
+			
+			while(!queue.isEmpty()) {
+				int[] now = queue.poll();
+				
+				for(int i : list.get(now[0])) {
+					if(nodeArr[i].max < now[1]) {
+						nodeArr[i].max = now[1];
+						nodeArr[i].cnt = 1;
+					}
+					else if(nodeArr[i].max == now[1]) {
+						nodeArr[i].cnt++;
+					}
+					
+					if(--inCnt[i] == 0) {
+						if(nodeArr[i].cnt > 1) nodeArr[i].max++;
+						queue.add(new int[] {i, nodeArr[i].max});
+					}
+				}
+			}
+			sb.append(ti + " " + nodeArr[M].max + "\n");
+		}
 		System.out.println(sb);
 		br.close();
 	}
 }
-
 class Node9470 {
-	int num, max, cnt;
-	public Node9470(int num, int max, int cnt) {
-		this.num=num;
-		this.max=max;
-		this.cnt=cnt;
+	int max, cnt;
+	public Node9470 (int max, int cnt) {
+		this.max = max;
+		this.cnt = cnt;
 	}
 }

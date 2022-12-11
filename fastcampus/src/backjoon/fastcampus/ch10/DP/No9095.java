@@ -17,9 +17,8 @@ public class No9095 {
 		ans[2]=2;
 		ans[3]=4;
 		
-		for(int i=4; i<=10; i++) {
+		for(int i=4; i<=10; i++)
 			ans[i] = ans[i-1] + ans[i-2] + ans[i-3];
-		}
 		
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<T; i++) {

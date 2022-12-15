@@ -3,7 +3,6 @@ package backjoon.fastcampus.ch10.DP;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
 import java.util.StringTokenizer;
 
 public class No1495 {
@@ -25,7 +24,6 @@ public class No1495 {
 		br.close();
 		
 		Dy[0][S] = true;
-		
 		
 		int ans = 0;
 		for(int i=1; i<=N; i++) {

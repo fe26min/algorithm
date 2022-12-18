@@ -12,20 +12,19 @@ public class No1300 {
 		int K = Integer.parseInt(br.readLine());
 		br.close();
 		
-		int l = 1;
-		int r = K;
+		long l = 1;
+		long r = (long)N * N;
 		
-		while(l<r) {
-			int mid = (l + r)/2;
-			
-			int count = 0;
+		while(l < r) {
+			long mid = (l + r) / 2;
+			long count = 0;
 			
 			for(int i=1; i<=N; i++) {
 				count += Math.min(mid/i, N);
 			}
-			
+//			System.out.println(mid + " " + l + " " + r + " " + count);
 			if(count < K) {
-				l = mid+1;
+				l = mid + 1;
 			}
 			else {
 				r = mid;

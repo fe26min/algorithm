@@ -54,7 +54,7 @@ public class No21922 {
 			int cx = cur[0];
 			int cy = cur[1];
 			
-			System.out.println(cx + " " + cy + " " + wind[cx][cy]);
+//			System.out.println(cx + " " + cy + " " + wind[cx][cy]);
 			
 			for(int i = 0; i < 4; i++){
 				if((wind[cx][cy] & (1 << i)) != 0 ) {

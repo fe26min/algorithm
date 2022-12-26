@@ -65,6 +65,7 @@ public class No14502 {
 		Queue<int[]> queue = new LinkedList<int[]>();
 		
 		// 왔던 곳인지 본다.
+		// temp가 2인 경우를 봐도 된다. 그러나 시간이 다르다.
 		boolean[][] visit = new boolean[N][M];
 		
 		// 바이러스를 큐에 넣기

@@ -1,5 +1,5 @@
 package backjoon.answer_note;
 
-public class No9489 {
+public class No17136 {
 
 }

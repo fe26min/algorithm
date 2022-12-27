@@ -10,22 +10,28 @@ public class No16926 {
 	static int[][] mat;
 	public static void main(String[] args) throws IOException {
 		input();
-		for(int i=0; i<R; i++) {
-			cycle();
-		}
+		circle(R);
 	}
 
-	private static void cycle() {
+	private static void circle(int r) {
+		
+		
+		int[][] next = new int[N][M];
+		
+		for(int i=0; i<N; i++) {
+			next[i] = mat[i].clone();
+		}
 		
 		for(int i=0; i<Math.min(N, M) / 2; i++) {
-			int temp = mat[i][i];
+			
+			int temp = next[i][i];
 			// 윗 변
-			for(int j=i+1; j < M-i; j++) {
-				mat[i][j-1] = mat[i][j]; 
+			for(int j=i; j < M-i-1; j++) {
+				next[i][j] = next[i][j+1]; 
 			}
 			// 오른변
-			for(int j=i+1; j<N-i; j++) {
-				mat[j][M-i-1] = next[j+1][M-i-1];
+			for(int j=i; j<N-i-1; j++) {
+				next[j][M-i-1] = next[j+1][M-i-1];
 			}
 			
 			// 아랫변

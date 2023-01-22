@@ -85,7 +85,6 @@ public class No16236 {
 			eatCount = 0;
 		}
 		mat[x][y] = 0;
-		
 		bx = x;
 		by = y;
 	}

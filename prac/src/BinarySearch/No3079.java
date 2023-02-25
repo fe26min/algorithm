@@ -20,20 +20,20 @@ public class No3079 {
 		
 		long ans = 0L;
 		while(left <= right) {
-			long mid = (left + right) / 2L;
-			long cnt = 0L;
+			long mid = (left + right) / 2;
+			long cnt = 0;
 			
 			for(int i : arr) {
-				cnt += mid / i;
+				cnt += (mid / i);
 			}
-			
-			if(cnt < M) {
-				left = mid + 1;
-			}
-			else if(cnt >= M) {
+			if(cnt >= M) {
 				ans = mid;
 				right = mid - 1;
 			}
+			else if(cnt < M) {
+				left = mid + 1;
+			}
+			
 		}
 		System.out.println(ans);
 	}
@@ -45,7 +45,7 @@ public class No3079 {
 		M = Integer.parseInt(st.nextToken());
 	
 		arr = new int[N];
-		
+		max = 0;
 		for(int i=0; i<N; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 			max = Math.max(arr[i], max);

@@ -10,7 +10,6 @@ public class No21943 {
 	static int[] arr;
 	static boolean[] visit;
 	
-	
 	public static void main(String[] args) throws IOException {
 		input();
 		pro();
@@ -59,7 +58,7 @@ public class No21943 {
 		arr = new int[N];
 		
 		st = new StringTokenizer(br.readLine());
-		for(int i=0; i<N; i++) {
+		for(int i=1; i<N; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		

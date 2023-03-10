@@ -1,4 +1,4 @@
-package codingTestPrac_basic;
+package Ch001_CodingTestPrac.Basic.Math;
 
 import java.io.BufferedReader;
 import java.io.IOException;

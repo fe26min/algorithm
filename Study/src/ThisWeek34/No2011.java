@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class No2011 {
 	static int len;
-	static int[][] dp;
+	static int[] dp;
 	static String password;
 	
 	public static void main(String[] args) throws IOException {
@@ -15,25 +15,36 @@ public class No2011 {
 	}
 
 	private static void pro() {
-		dp = new int[len][2];
-		
-		dp[0][0] = 1;
-		
-		for(int i=1; i<len; i++) {
-			dp[i][0] = (dp[i-1][0] + dp[i-1][1]) % 1000000;
-			
-			int num = (password.charAt(i-1) - '0') * 10 + (password.charAt(i) - '0');
-			if(num <=26) {
-				dp[i][1] = dp[i-1][0];
-			}
+		if(password.charAt(0) == '0') {
+			System.out.println(0);
+			return;
 		}
-		System.out.println((dp[len-1][0] + dp[len-1][1]) % 1000000);
+		
+		dp = new int[len + 1];
+		
+		dp[0] = 1;
+		dp[1] = 1;
+		
+		int prev = password.charAt(0) - '0';
+		for(int i=2; i<= len; i++) {
+			int num = password.charAt(i-1) - '0';
+			if(num != 0) {
+				dp[i] = dp[i-1];
+			}
+			if(prev != 0 && prev * 10 + num <= 26) {
+				dp[i] += dp[i-2];
+			}
+			dp[i] %= 1000000;
+			prev = num;
+		}
+		
+		System.out.println(dp[len]);
 	}
 
 	private static void input() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		password = br.readLine();
-		len = password.length();
 		br.close();
+		len = password.length();
 	}
 }

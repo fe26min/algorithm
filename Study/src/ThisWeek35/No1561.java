@@ -13,30 +13,27 @@ public class No1561 {
 		pro();
 	}
 	private static void pro() {
-		if(N < M) {
+		if(N <= M) {
 			System.out.println(N);
 			return;
 		}
 		
-		long time = bsearch() - 1;
+		long time = bsearch();
 //		System.out.println(time);
-		long child = M;
+		long cnt = M;
 		
 		for(int i : arr)
-			child += time/i;
+			cnt += (time-1)/i;
 		
-//		System.out.println(time + " " + cnt);
-		
-		int i = 0;
-		
-		while(true) {
-			if((time + 1) % arr[i] == 0)
-				child++;
-			i++;
-			if(child == N)
-				break;
+		for(int i=0; i<M; i++) {
+			if(time % arr[i]==0) {
+				cnt++;
+				if(cnt == N) {
+					System.out.println(i + 1);
+					return;
+				}
+			}
 		}
-		System.out.println(i);
 	}
 	private static long bsearch() {
 		long L = 0L;
@@ -44,11 +41,12 @@ public class No1561 {
 		long result = -1;
 		while(L <= R) {
 			long mid = (L + R) / 2;
-			long child = M;
+			long child = 0;
 			
 			for(int i : arr) {
 				child += mid / i;
-			}
+			    child += 1;
+            }
 			
 			if(child >= N) {
 				result = mid;

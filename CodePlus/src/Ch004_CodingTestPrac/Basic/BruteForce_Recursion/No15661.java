@@ -1,4 +1,4 @@
-package Ch003_CodingTestPrac.Basic.BruteForce_Recursion;
+package Ch004_CodingTestPrac.Basic.BruteForce_Recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;

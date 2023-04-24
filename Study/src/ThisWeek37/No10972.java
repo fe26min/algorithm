@@ -1,11 +1,11 @@
-package ThisWeek38;
+package ThisWeek37;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class No10973 {
+public class No10972 {
 	static int N;
 	static int[] arr;
 	public static void main(String[] args) throws IOException {
@@ -25,25 +25,25 @@ public class No10973 {
 	}
 	
 	private static boolean check() {
-		// 규칙 1. 앞에가 뒤에 보다 큰 수 찾기
+		// 규칙 1. 앞에가 뒤에 보다 작은 수 찾기
 		int i = N-1;
 		
-		while(i>0 && arr[i-1] < arr[i])
+		while(i>0 && arr[i-1] > arr[i])
 			i--;
-		// i가 0이라면 모든 배열이 오름차순이다.
-		// 즉 배열 중에 가장 작은 수이다.
+		// i가 0이라면 모든 배열이 내림차순이다.
+		// 즉 배열 중에 가장 큰 수이다.
 		if(i==0)
 			return false;
 			
 		int j = N-1;
 		
-		// 규칙 2 arr[i-1]보다 작은 수 중에 가장 뒤에 있는 수(가장 큰 수)를 찾기
-		while(arr[j] >= arr[i-1]) {
+		// 규칙 2 arr[i-1]보다 큰 수 중에 가장 뒤에 있는 수(가장 작은 수)를 찾기
+		while(arr[j] <= arr[i-1]) {
 			j--;
 		}
 		swap(i-1, j);
 		
-		// 규칙 3. 오름차순으로 가장 작은 수이기 때문에 내림차순으로 가장 큰 수로 바꾸기
+		// 규칙 3. 내림차순으로 가장 큰 수이기 때문에 오른차순으로 가장 작은 수로 바꾸기
 		j = N-1;
 		while(i < j) {
 			swap(i, j);

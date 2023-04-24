@@ -1,4 +1,4 @@
-package ThisWeek37;
+package ThisWeek36;
 
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;

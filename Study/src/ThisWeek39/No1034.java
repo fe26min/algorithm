@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.PriorityQueue;
-import java.util.SortedMap;
 import java.util.StringTokenizer;
-import java.util.TreeMap;
 
 public class No1034 {
 	static int N, M, K;

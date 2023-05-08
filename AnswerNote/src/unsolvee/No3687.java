@@ -1,5 +1,5 @@
 package unsolvee;
 
-public class No1027 {
+public class No3687 {
 
 }

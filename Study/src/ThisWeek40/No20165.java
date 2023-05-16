@@ -46,7 +46,6 @@ public class No20165 {
 			int X = Integer.parseInt(st.nextToken()) - 1;
 			int Y = Integer.parseInt(st.nextToken()) - 1;
 			int D = Dir.valueOf(st.nextToken()).getValue();
-//					dir(st.nextToken().charAt(0));
 			
 			Queue<int[]> queue = new LinkedList<int[]>();
 			
@@ -89,19 +88,5 @@ public class No20165 {
 		}
 		
 		br.close();
-	}
-
-	private static int dir(char c) {
-		switch(c) {
-		case 'E':
-			return 0;
-		case 'W':
-			return 1;
-		case 'S':
-			return 2;
-		case 'N':
-			return 3;
- 		}
-		return -1;
 	}
 }

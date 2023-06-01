@@ -3,6 +3,7 @@ package ThisWeek43;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -25,20 +26,19 @@ public class No17140 {
 		cc = 3;
 		
 		int count = 0;
-		
-		while(count<=100 && mat[r][c] != k) {
-			if(cr >= cc) {
+		while(count <= 100 && mat[r][c] != k) {
+			if(cr >= cc)
 				funcR();
-			}
-			else {
+			else
 				funcC();
-			}
 			count++;
 		}
-		if(count==101) System.out.println(-1);
-		else System.out.println(count);
+		if(count == 101)
+			count = -1;
+		System.out.println(count);
 	}
-	
+
+
 	private static void funcC() {
 		for(int i=0; i<cc; i++) {
 			HashMap<Integer, Integer> hm = new HashMap<>();
@@ -48,8 +48,8 @@ public class No17140 {
 				mat[j][i] = 0;
 			}
 			
-			List<Map.Entry<Integer, Integer>> entryList = new LinkedList<>(hm.entrySet());
-			entryList.sort(new Comparator<Map.Entry<Integer, Integer>>() {
+			List<Map.Entry<Integer, Integer>> list = new LinkedList<>(hm.entrySet());
+			list.sort(new Comparator<Map.Entry<Integer, Integer>>() {
 
 				@Override
 				public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
@@ -61,10 +61,11 @@ public class No17140 {
 			});
 			
 			int count = 0;
-			for(Map.Entry<Integer, Integer> entry : entryList) {
+			
+			for(Entry<Integer, Integer> ent : list) {
 				if(count >= 100) break;
-				mat[count++][i] = entry.getKey();
-				mat[count++][i] = entry.getValue();
+				mat[count++][i] = ent.getKey();
+				mat[count++][i] = ent.getValue();
 			}
 			cr = Math.max(cr, count);
 		}
@@ -72,33 +73,34 @@ public class No17140 {
 
 	private static void funcR() {
 		for(int i=0; i<cr; i++) {
-			Map<Integer, Integer> hm = new HashMap<>();
+			HashMap<Integer, Integer> hm = new HashMap<>();
 			
 			for(int j=0; j<cc; j++) {
-				if(mat[i][j] == 0) continue;
+				if(mat[i][j]==0)
+					continue;
 				hm.put(mat[i][j], hm.getOrDefault(mat[i][j], 0) + 1);
 				mat[i][j] = 0;
 			}
 			
-			List<Map.Entry<Integer, Integer>> entryList = new LinkedList<>(hm.entrySet());
-			entryList.sort(new Comparator<Map.Entry<Integer, Integer>>() {
+			ArrayList<Entry<Integer, Integer>> list = new ArrayList<>(hm.entrySet());
+			list.sort(new Comparator<Entry<Integer, Integer>>() {
 
 				@Override
 				public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
-					if(o1.getValue() == o2.getValue()) {
+					if(o1.getValue() == o2.getValue())
 						return o1.getKey() - o2.getKey();
-					}
 					return o1.getValue() - o2.getValue();
 				}
 			});
 			
 			int count = 0;
-			for(Map.Entry<Integer, Integer> entry : entryList) {
+			
+			for(Entry<Integer, Integer> ent : list) {
 				if(count >= 100) break;
-				mat[i][count++] = entry.getKey();
-				mat[i][count++] = entry.getValue();
+				mat[i][count++] = ent.getKey();
+				mat[i][count++] = ent.getValue();
 			}
-			cc =  Math.max(cc, count);
+			cc = Math.max(cc, count);
 		}
 	}
 
@@ -117,6 +119,6 @@ public class No17140 {
 				mat[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		br.close();		
+		br.close();
 	}
 }

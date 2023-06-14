@@ -57,7 +57,7 @@ public class No1245 {
 			}
 		}
 		if(isPeak && mat[i][j] > min) {
-			System.out.println(i + " " + j);
+//			System.out.println(i + " " + j);
 			cnt++;
 		}
 	}
